@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión - Lavandería</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Control de Lavandería</h1>
+        <p>Gestión de órdenes y prendas diarias</p>
+    </header>
+
+    <main class="container">
+        <!-- Formulario de Registro -->
+        <section class="card">
+            <h2>Registrar Nueva Orden</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="clientName">Nombre del Cliente:</label>
+                    <input type="text" id="clientName" required placeholder="Ej. Ana Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="garmentType">Tipo de Prenda:</label>
+                    <select id="garmentType" required>
+                        <option value="">Seleccione una prenda</option>
+                        <option value="Traje">Traje / Saco</option>
+                        <option value="Vestido">Vestido</option>
+                        <option value="Camisa">Camisa / Blusa</option>
+                        <option value="Pantalón">Pantalón / Jeans</option>
+                        <option value="Edredón">Edredón / Ropa de cama</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity">Cantidad:</label>
+                        <input type="number" id="quantity" min="1" required placeholder="Mínimo 1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Precio Unitario ($):</label>
+                        <input type="number" id="price" step="0.01" min="0.01" required placeholder="0.00">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">Registrar Orden</button>
+            </form>
+        </section>
+
+        <!-- Listado de Órdenes -->
+        <section class="card full-width">
+            <h2>Órdenes Registradas</h2>
+            <div class="table-responsive">
+                <table id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Prenda</th>
+                            <th>Cant.</th>
+                            <th>Precio Unit.</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Las órdenes se insertan dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
